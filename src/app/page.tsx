@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="relative flex h-screen flex-col items-center overflow-hidden bg-cyan-300">
-      <div className="absolute mt-4 flex flex-col items-center">
+      <div className="absolute mt-4 flex flex-col items-center text-center">
         <h1 className="text-5xl font-black text-pink-500">
           INTERACTIVE KEYBOARD
         </h1>
@@ -33,7 +33,6 @@ export default function Home() {
           try hitting the keys on your physical keyboard and watch the magic
           happen
         </h2>
-        <h3 className="text-cyan-900">{'("GO" is enter)'}</h3>
       </div>
 
       <Spline
