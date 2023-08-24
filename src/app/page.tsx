@@ -1,9 +1,13 @@
 'use client'
 
+import React, { useState } from 'react'
 import Spline from '@splinetool/react-spline'
+import { Loader2 } from 'lucide-react'
 // import { RefObject, useRef } from 'react'
 
 export default function Home() {
+  const [loading, setLoading] = useState(true)
+
   // const keyboard: RefObject<any | null> = useRef(null)
 
   // function onLoad(spline: any) {
@@ -24,7 +28,7 @@ export default function Home() {
   // }
 
   return (
-    <main className="relative flex h-screen flex-col items-center overflow-hidden bg-cyan-300">
+    <main className="relative flex h-screen flex-col items-center overflow-hidden bg-[#4cceff]">
       <div className="absolute mt-4 flex flex-col items-center text-center">
         <h1 className="text-5xl font-black text-pink-500">
           INTERACTIVE KEYBOARD
@@ -35,9 +39,15 @@ export default function Home() {
         </h2>
       </div>
 
+      {loading && (
+        <div className="absolute top-[50%] animate-spin">
+          <Loader2 color="#ec4899" size={48} />
+        </div>
+      )}
+
       <Spline
-        scene="https://prod.spline.design/luwBnVZ3KJsh0toS/scene.splinecode"
-        // onLoad={onLoad}
+        onLoad={() => setLoading(false)}
+        scene="https://prod.spline.design/UvOQScdDiuZeLP4q/scene.splinecode"
       />
     </main>
   )
